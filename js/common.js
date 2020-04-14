@@ -14,7 +14,7 @@ jQuery(function ($) {
 		else $(this).removeClass('ani-on');
 
 		$header.toggleClass('active');
-		$(this).toggleClass('on');
+		$(this).toggleClass('active');
 		
 		$gnb.toggleClass('on');
 
@@ -44,7 +44,7 @@ jQuery(function ($) {
 
 	function dep2Open(target) {
 		var depth2Hei = target.next('.sub-menu').children().length;
-		var depth2Fz = parseInt($depth2.css('fontSize')) + 22;
+		var depth2Fz = parseInt($depth2.css('fontSize')) + 30;
 
 		$depth1.parent('li.on').removeClass('on').find('.sub-menu').stop().animate({height: '0'}, 500);
 		target.parent('li').addClass('on').find('.sub-menu').stop().animate({height: depth2Hei * depth2Fz}, 500);
@@ -57,42 +57,6 @@ jQuery(function ($) {
 	}
 
 
-
-
-    var lastScrollTop = 0; 
-    var delta = 5;
-	var didScroll; 
-	
-    // 스크롤시에 사용자가 스크롤했다는 것을 알림 
-    $(window).scroll(function(event){ 
-        didScroll = true;
-    }); 
-    // hasScrolled()를 실행하고 didScroll 상태를 재설정 
-    setInterval(function() { 
-        if (didScroll) { 
-            hasScrolled(); 
-            didScroll = false; 
-        } 
-    }, 250); 
-    
-    function hasScrolled() { 
-        var st = $(this).scrollTop();
-        if(Math.abs(lastScrollTop - st) <= delta) 
-            return;
-        
-        if (st > 0){ 
-            // Scroll Down 
-            $('body').removeClass('nav-down').addClass('nav-up'); 
-        } else { 
-            // Scroll Up 
-            if(st + $(window).height() < $(document).height()) { 
-                $('body').removeClass('nav-up').addClass('nav-down'); 
-            } 
-        } 
-        
-        lastScrollTop = st;
-        
-    }
 
 
     /* movetop */
@@ -111,8 +75,36 @@ jQuery(function ($) {
 		}, {
 			offset: '65%'
 		});
-	});
+    });
 
+
+
+
+    var controller = new ScrollMagic.Controller();
+
+    new ScrollMagic.Scene({triggerElement: "#main",
+    offset: 50,
+    triggerHook: 'onLeave'})
+
+    .setClassToggle("#header", "on") // add class toggle
+    .addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#main",
+    offset: 50,
+    triggerHook: 'onLeave'})
+
+    .setClassToggle("#hamBtn", "on") // add class toggle
+    .addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: "#main",
+    offset: 50,
+    triggerHook: 'onLeave'})
+
+    .setClassToggle(".quick", "on") // add class toggle
+    .addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
 
 
 });
