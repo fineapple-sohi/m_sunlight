@@ -1,0 +1,224 @@
+@charset "utf-8";
+
+
+/* reset */
+* {box-sizing: border-box;}
+/* *:focus {outline: none;} */
+html {font-size: 20px;}
+body,  h1, h2, h3, h4, h5, p, ul, address, th, td, button, dl, dd, dt {margin: 0; padding: 0;}
+body {font-family: 'NanumBarunG', 'Noto Sans KR', '본고딕', 'NanumGothic', '나눔고딕', 'Gulim', '굴림'; font-size: inherit;  font-weight: 400; line-height: 1.6; color: #181818; word-break: keep-all;}
+h1, h2, h3, h4, h5 {font-weight: 400; font-size: inherit;}
+ul, ol {list-style: none;}
+a:hover, a:link, a:visited, a:active {text-decoration: none; color: inherit;}
+button {cursor: pointer; background: none; border: none;}
+table {border-collapse: collapse; border-spacing: 0; font-weight: inherit;}
+address {font-style: normal;}
+img {vertical-align: top; border: none; max-width: 100%; height: auto;}
+header, nav, section, article, footer {display: block;}
+figure {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+p {font-size: 0.8rem; font-weight: 300;}
+
+
+/* 공통클래스 */
+.blind {font-size: 0; line-height: 0; width: 1px; height: 1px; line-height: 1px; text-align: -9999px; overflow: hidden; position: absolute; top: 0; left: -9999px;}
+.clear:after {content: ""; display: block; clear: both;}
+.p_r {position: relative;}
+.p_a {position: absolute;}
+.df {display: flex;}
+.f_l {float: left;}
+.f_r {float: right;}
+.tc {text-align: center;}
+
+.ir-pm {display: block; overflow: hidden; font-size: 0; line-height: 0; text-indent: -9999px;}
+/*의미있는 이미지의 대체 텍스트를 제공하는 경우(Phark Method)*/
+.ir-wa {display: block; overflow: hidden; position: relative; z-index: -1; width: 100%; height: 100%;}
+/*의미있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고자 할 떄(WA IR)*/
+.ir-so {overflow: hidden; position: absolute; width: 0; height: 0; line-height: 0; text-indent: -9999px;}
+/*screen out 대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때*/
+
+.wrap {width: 100%; min-width: 375px; max-width: 840px; margin: 0 auto;}
+.area {position: relative; width: 100%; height: 100%; padding: 0 6%; margin: 0 auto;}
+
+.fc_y {color: #ffdb63;}
+.fc_y2 {color: #f2b41d;}
+.fc_g {color: #bfd45d;}
+.fc_g2 {color: #9eb333;}
+.fc_w {color: #fff;}
+.fc_wg {color: #dcdcdc;}
+
+.f_jeju {font-family: 'jejuGothic';}
+.f_chosun {font-family: 'Chosunilbo_myungjo';}
+.f_num {font-family: DINmid; font-weight: 700;}
+
+.hb_y {background-color: #ffcc25;}
+.hb_g {background-color: #bfd45d;}
+.hb_p {background-color: #f9b2ae;}
+
+
+
+.light {font-weight: thin; font-weight: 300;}
+.normal {font-weight: normal; font-weight: 400;}
+.bold {font-weight: bold; font-weight: 700;}
+
+.p_r {position: relative;}
+
+.underline {border-bottom: 1px solid #fff; padding-bottom: 0.01em;}
+.underline.bl {border-color: #000;}
+
+.lh16 {line-height: 1.6;}
+.lh18 {line-height: 1.8;}
+.lh20 {line-height: 2;}
+
+.fz8 {font-size: 0.4rem;}
+.fz10 {font-size: 0.5rem;}
+.fz12 {font-size: 0.6rem;}
+.fz14 {font-size: 0.7rem;}
+.fz16 {font-size: 0.8rem;}
+.fz18 {font-size: 0.9rem;}
+.fz20 {font-size: 1rem;}
+.fz22 {font-size: 1.1rem;}
+.fz24 {font-size: 1.2rem;}
+.fz26 {font-size: 1.3rem;}
+.fz28 {font-size: 1.4rem;}
+.fz30 {font-size: 1.5rem;}
+.fz32 {font-size: 1.6rem;}
+.fz36 {font-size: 1.8rem;}
+.fz50 {font-size: 2.5rem;}
+
+.mb1 {margin-bottom: 0.5rem;}
+.mb2 {margin-bottom: 1rem;}
+.mb3 {margin-bottom: 1.5rem;}
+.mb4 {margin-bottom: 2rem;}
+.mb6 {margin-bottom: 3rem;}
+.mb8 {margin-bottom: 4rem;}
+
+
+
+
+/* header */
+#header {position: fixed; top: 0; left: 0; width: 100%; padding: 0 5%; z-index: 1000; background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.3) 100%);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);}
+
+#header .dim {position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); opacity: 0; visibility: hidden; transition: all 0.8s;}
+#header.active .dim {opacity: 1; visibility: visible; z-index: 1005;}
+
+#header .logo {position: relative; width: 50%; padding: 0.8em 0; z-index: 5; margin: 0 auto;}
+#header .logo a {display: block; background: url(../images/h_logo.png) center center/contain no-repeat; text-indent: -9999em; width: 100%; height: 2rem;}
+
+#header .call {position: absolute; top: 50%; right: 5%; transform: translate(0,-50%); background: url(../images/h_call.png) no-repeat center center/contain; width: 2em; height: 2em;}
+
+
+#hamBtn {position: fixed; top: 1.2rem; left: 5%; width: 1.6rem; height: 1.2rem; z-index: 1015; cursor: pointer;}
+#hamBtn span {position: absolute; left: 0; display: block; height: 0.12em; background: #fff; border-radius: 0.5em;}
+#hamBtn span.top {top: 0; width: 100%;}
+#hamBtn span.mid {top: 50%; width: 70%;}
+#hamBtn span.btm {top: 100%; width: 85%;}
+
+#hamBtn.on span {background: #000;}
+#hamBtn.on span.top {animation: ham-top 0.6s ease-out forwards;}
+#hamBtn.on span.mid {animation: ham-mid 0.6s ease-out forwards;}
+#hamBtn.on span.btm {animation: ham-btm 0.6s ease-out forwards;}
+
+#hamBtn.ani-on span.top {animation: ham-top2 0.6s ease-out forwards;}
+#hamBtn.ani-on span.mid {animation: ham-mid2 0.6s ease-out forwards;}
+#hamBtn.ani-on span.btm {animation: ham-btm2 0.6s ease-out forwards;}
+
+#header .logo, #header .logo a, #header .call, #hamBtn {transition: all 0.4s;}
+
+.nav-up #header .logo {width: 45%;}
+.nav-up #header .logo a {height: 1.6rem;}
+.nav-up #header .call {width: 1.6rem; height: 1.6rem;}
+.nav-up #hamBtn {top: 1rem; width: 1.4rem; height: 1rem;}
+
+@keyframes ham-top {
+    0% {top: 0;}
+    60% {top: 50%;}
+    100% {top: 50%; transform: rotate(45deg);}
+}
+
+@keyframes ham-mid {
+    0% {opacity: 1;}
+    60% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+@keyframes ham-btm {
+    0% {top: 100%;}
+    60% {top: 50%; width: 85%;}
+    100% {top: 50%; transform: rotate(-45deg); width: 100%;}
+}
+
+@keyframes ham-top2 {
+    0% {top: 50%; transform: rotate(45deg);}
+    40% {top: 50%; transform: rotate(0);}
+    100% {top: 0%;}
+}
+
+@keyframes ham-mid2 {
+    0% {opacity: 0;}
+    40% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes ham-btm2 {
+    0% {top: 50%; transform: rotate(-45deg); width: 100%;}
+    40% {top: 50%;  transform: rotate(0);}
+    100% {top: 100%; width: 85%;}
+}
+
+
+
+#gnb {position: fixed; width: 80%; height: 100vh; top: 0; left: 0; padding: 6em 2em 3em; transform: translate(-100%,0); background: #ffdb63; opacity: 0; z-index: 1010; transition: all 0.8s; overflow-y: scroll;}
+#gnb.on {transform: translate(0,0); opacity: 1;}
+
+#header #gnb .depth1 > li {font-size: 1.1rem; font-family: 'NanumBarunG';}
+#header #gnb .depth1 > li + li {margin-top: 1.4em;}
+
+#header #gnb .depth1 > li.on:after {transform: rotate(90deg); color: #000;}
+
+
+#header #gnb .depth1 > li .sub-menu {height: 0; font-size: 0.8em; font-weight: 300; color: #888; overflow: hidden;}
+#header #gnb .depth1 > li .sub-menu li:first-child {margin-top: 1.4em;}
+#header #gnb .depth1 > li .sub-menu li + li {margin-top: 1em;}
+
+
+
+/* footer */
+#footer {color: #484848; background: #ffdb63; padding: 2rem 0 4rem;}
+
+#footer .f_top {padding-bottom: 1em; border-bottom: 1px solid rgba(56, 56, 56, 0.2);}
+#footer .f_top .info li {display: inline-block; margin: 1em 2em 0 0;}
+#footer .f_top .time {text-align: right;}
+#footer .f_top .time ul {font-weight: 500; margin-left: 1.4em;}
+#footer .f_top .time li + li {margin-top: 0.5em;}
+
+#footer .f_btm {padding: 2rem 0 0;}
+#footer .f_btm ul {opacity: 0.54;}
+#footer .f_btm ul li {display: inline-block;}
+#footer .f_btm .f_num {position: relative; padding-left: 0.8em; margin-left: 0.5em;}
+#footer .f_btm .f_num:before {content: ''; position: absolute; top: 50%; left: 0; transform: translate(0,-50%); width: 2px; height: 60%; background: rgba(56, 56, 56, 0.5);}
+
+
+/* quick */
+.quick {position: fixed; bottom: 0; left: 50%; transform: translate(-50%,0); width: 100vw; max-width: 480px; display: flex; z-index: -1;}
+.nav-up .quick {z-index: 980;}
+
+.quick a {display: block; width: 25%; text-align: center; padding: 1.5em 0; border-radius: 0.8em 0.8em 0 0;}
+.quick a.q-hwagok {background-color: #afc353;}
+.quick a.q-magok {background-color: #fdd03b;}
+.quick a.q-blog {background-color: #57c344;}
+.quick a.q-call {background-color: #f9b2ae;}
+
+.quick a span {display: inline-block; background: no-repeat left center/25%;}
+.quick a.q-hwagok span,
+.quick a.q-magok span {background-image: url(../images/icon_loca.png); padding-left: 22%;}
+.quick a.q-blog span {background-image: url(../images/icon_nblog.png); padding-left: 28%;}
+.quick a.q-call span {background-image: url(../images/icon_call.png); padding-left: 28%;}
