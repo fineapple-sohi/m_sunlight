@@ -5,15 +5,78 @@
 
 .cnt01 {padding-top: 3rem;}
 
+.tablist li {cursor: pointer;}
+.sub_tap .tabpanel {display: none;}
+.sub_tap .tabpanel.active {display: block;}
+
+
+/* sub1 */
+.sub01 #topLnb ul {display: flex; width: 100%;}
+.sub01 #topLnb ul li {width: 25%; color: #aaa;}
+.sub01 #topLnb ul li.on {border-bottom: 2px solid #bfd45d; color: #000;}
+.sub01 #topLnb ul li a {display: block; padding: 0.8em 0;}
+
+.sub1_tit h3 {display: inline-block; padding: 0.22em 0;  background-repeat: no-repeat; background-size: contain;}
+.sub1_tit.gr h3 {background-image: url(../sub/images/sub_tit_bgg.png);}
+.sub1_tit.pi h3 {background-image: url(../sub/images/sub_tit_bgp.png);}
+.sub1_tit.ye h3 {background-image: url(../sub/images/sub_tit_bg.png);}
+#greeting .sub1_tit h3 {background-position: right 13% center;}
+#teacher .sub1_tit h3 {background-position: center center;}
+#facility .sub1_tit h3 {background-position: center center;}
+#map .sub1_tit h3 {background-position: right 2% center; padding: 0 0.4em;}
+
+
+#greeting {position: relative; background: url(../sub/images/checkbg.png); background-size: cover; padding: 3rem 0 7rem;}
+#greeting ul li {margin-bottom: 1.5rem;}
+#greeting ul li strong {font-size: 0.8rem; font-weight: 400;}
+#greeting .sign {position: absolute; bottom: 0; right: 0; transform: translate(0,35%);}
+
+
+#teacher {background-image: linear-gradient(to bottom, #fff 0%, #f6f6f6 100%); padding: 3rem 0;}
+
+
+
+
+#facility {padding: 3rem 0 7rem;}
+#facility .area {overflow: visible;}
+
+#faciTab .interiorView.swiper-container {overflow: visible;}
+#faciTab .interiorView .swiper-wrapper {margin-bottom: 1.5rem;}
+
+#faciTab .interiorView {width: 100%; background: url(../sub/images/facility_bg.png) no-repeat center top /contain; padding-top: 12%;}
+#faciTab .interiorView .swiper-slide img {width: 88%;}
+#faciTab .interiorView .swiper-slide p {width: 80%; margin: 0.6em auto 0; background: #fff; font-size: 0.7rem;}
+#faciTab .interiorView .swiper-slide p strong {margin-left: 1em;}
+
+#faciTab .tablist li {display: inline-block; padding: 0.2em 1.2em; border-radius: 5em; color: #fff; background: #d2d2d2; margin: 0 0.25em; font-size: 0.8rem;}
+#faciTab .tablist li:nth-child(1).on {background: #bfd45d;}
+#faciTab .tablist li:nth-child(2).on {background: #ffcc25;}
+
+#faciTab .swiper-pagination {position: static; width: 100%;}
+#faciTab .swiper-pagination-bullet {width: calc(20% - 4px); background: none; opacity: 1; margin: 0 2px;}
+
+
+
+
+#map .txt_area {background: url(../sub/images/map.jpg) no-repeat center center/ cover; padding: 3rem 0;}
+#map .txt_area p {}
+#map .txt_area .more {border: 1px solid #fff; padding: 0.6em 1.4em;}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* sub2~5 common */
 .btmbnr {background: url(../sub/images/btm_bnr.jpg) no-repeat center top;}
-
-
-
-
-
 
 /* ----------------sub1------------------------ */
 .sub01 #subTit {background-image: url(../sub/images/sub1_titbg.jpg);}

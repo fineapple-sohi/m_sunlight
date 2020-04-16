@@ -53,6 +53,7 @@ p {font-size: 0.8rem; font-weight: 300;}
 .fc_w {color: #fff;}
 .fc_wg {color: #dcdcdc;}
 .fc_mg {color: #a0a0a0;}
+.fc_bl {color: #000;}
 
 .f_jeju {font-family: 'jejuGothic';}
 .f_chosun {font-family: 'Chosunilbo_myungjo';}
@@ -109,7 +110,7 @@ p {font-size: 0.8rem; font-weight: 300;}
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);}
 
-#header .dim {position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); opacity: 0; visibility: hidden; transition: all 0.8s;}
+#header .dim {position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); opacity: 0; visibility: hidden; transition: all 0.5s;}
 #header.active .dim {opacity: 1; visibility: visible; z-index: 1005;}
 
 #header .logo {position: relative; width: 50%; padding: 0.8em 0; z-index: 5; margin: 0 auto;}
@@ -133,12 +134,14 @@ p {font-size: 0.8rem; font-weight: 300;}
 #hamBtn.ani-on span.mid {animation: ham-mid2 0.6s ease-out forwards;}
 #hamBtn.ani-on span.btm {animation: ham-btm2 0.6s ease-out forwards;}
 
-#header .logo, #header .logo a, #header .call, #hamBtn {transition: all 0.4s;}
+#header .logo, #header .logo a, #header .call, #hamBtn, #gnb:before {transition: all 0.4s;}
 
 #header.on .logo {width: 45%; padding: 0.6em 0;}
 #header.on .logo a {height: 1.6rem;}
 #header.on .call {width: 1.4rem; height: 1.4rem;}
 #hamBtn.on {top: 0.9rem; width: 1.4rem; height: 0.9rem;}
+#header.on #gnb:before {height: 2.8rem;}
+
 
 @keyframes ham-top {
     0% {top: 0;}
@@ -178,19 +181,21 @@ p {font-size: 0.8rem; font-weight: 300;}
 
 
 
-#gnb {position: fixed; width: 80%; height: 100vh; top: 0; left: 0; padding: 6em 2em 3em; transform: translate(-100%,0); background: #ffdb63; opacity: 0; z-index: 1010; transition: all 0.8s; overflow-y: auto;}
+#gnb {position: fixed; width: 80%; height: 100vh; top: 0; left: 0; padding: 6em 1.5em 3em; transform: translate(-100%,0); background: #fff; opacity: 0; z-index: 1010; transition: all 0.7s; overflow-y: auto;}
+#gnb:before {content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3.3rem; background: #ffdb63;}
 #gnb.on {transform: translate(0,0); opacity: 1;}
 
-#header #gnb .depth1 > li {font-size: 1.1rem; font-family: 'NanumBarunG';}
+#header #gnb .depth1 > li {position: relative; font-size: 1rem; font-family: 'NanumBarunG'; font-weight: 400;}
 #header #gnb .depth1 > li + li {margin-top: 1.4em;}
+#header #gnb .depth1 > li.on {font-weight: 700;}
 
-#header #gnb .depth1 > li.on:after {transform: rotate(90deg); color: #000;}
+#header #gnb .depth1 > li:after {content: ''; position: absolute; top: 1.5rem; left: 0; background: #ffdb63; width: 0; height: 2px; transition: all 0.5s;}
+#header #gnb .depth1 > li.on:after {width: 70%;}
 
 
-#header #gnb .depth1 > li .sub-menu {height: 0; font-size: 0.8em; font-weight: 300; color: #888; overflow: hidden;}
+#header #gnb .depth1 > li .sub-menu {height: 0; font-size: 0.8em; font-weight: 300; color: #666; overflow: hidden;}
 #header #gnb .depth1 > li .sub-menu li:first-child {margin-top: 1.4em;}
 #header #gnb .depth1 > li .sub-menu li + li {margin-top: 1em;}
-
 
 
 /* footer */
@@ -206,7 +211,7 @@ p {font-size: 0.8rem; font-weight: 300;}
 #footer .f_btm ul {opacity: 0.54;}
 #footer .f_btm ul li {display: inline-block;}
 #footer .f_btm .f_num {position: relative; padding-left: 0.8em; margin-left: 0.5em;}
-#footer .f_btm .f_num:before {content: ''; position: absolute; top: 50%; left: 0; transform: translate(0,-50%); width: 2px; height: 60%; background: rgba(56, 56, 56, 0.5);}
+#footer .f_btm .f_num:before {content: ''; position: absolute; top: 60%; left: 0; transform: translate(0,-50%); width: 2px; height: 60%; background: rgba(56, 56, 56, 0.5);}
 
 
 /* quick */

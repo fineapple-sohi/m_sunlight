@@ -11,10 +11,6 @@ $(document).ready(function(){
                 return '<span class="' + className + '"><img src="images/place/thumb_hg0' + (index + 1) + '.jpg" alt=""></span>';
             },
         },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
         speed: 800,
         autoplay: {
             delay: 2000,
@@ -36,10 +32,6 @@ $(document).ready(function(){
                 return '<span class="' + className + '"><img src="images/place/thumb_mg0' + (index + 1) + '.jpg" alt=""></span>';
             },
         },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
         speed: 800,
         autoplay: {
             delay: 2000,
@@ -52,26 +44,20 @@ $(document).ready(function(){
     });
 
 
+    /* sub tab */
+    var $tabList = $('.sub_tap .tablist .tab');
+    var $tabCnt = $('.sub_tap .tabcnt .tabpanel');
 
+    $tabList.eq(0).addClass('on').siblings().removeClass('on');
+    $tabCnt.eq(0).addClass('active').siblings().removeClass('active');
 
-    /* sub2,3,4,5 lnb tab */
-    var $lnbList = $('#topLnb .lnb_list li');
-    var $lnbCnt = $('.lnb_cnt article');
-
-    $lnbList.eq(0).addClass('on');
-    $lnbCnt.eq(0).show().siblings().hide();
-
-    $lnbList.on('click', function(){
-        var lnbidx = $(this).index();
+    $tabList.on('click', function(){
+        var tabbidx = $(this).index();
 
         $(this).addClass('on').siblings().removeClass('on');
-        $lnbCnt.eq(lnbidx).show().siblings().hide();
-        
+        $(this).parent('.tablist').next().children().eq(tabbidx).addClass('active').siblings().removeClass('active');
+
     });
-
-
-
-
 
 
 

@@ -6,20 +6,23 @@ jQuery(function ($) {
 	var $hamBtn = $('#hamBtn');
 	var $gnb = $('#gnb');
 
+	
 	$hamBtn.on('click', function(){
 		if($header.is('.active')) {
 			$(this).addClass('ani-on');
 			$depth1.parent('li.on').removeClass('on').find('.sub-menu').stop().animate({height: '0'}, 800);
+			$('body').css("overflow", "scroll");
 		}
-		else $(this).removeClass('ani-on');
+		else {
+			$(this).removeClass('ani-on');
+			$('body').css("overflow", "hidden");
+		}
 
 		$header.toggleClass('active');
 		$(this).toggleClass('active');
 		
 		$gnb.toggleClass('on');
 
-		// if($header.is('.active')) scrollDisable();
-		// else scrollAble();
 
 	});
 
@@ -57,8 +60,6 @@ jQuery(function ($) {
 	}
 
 
-
-
     /* movetop */
     // $('#moveTop').on('click', function(event){
     //     event.preventDefault();
@@ -75,7 +76,17 @@ jQuery(function ($) {
 		}, {
 			offset: '65%'
 		});
-    });
+	});
+	
+
+
+
+
+
+
+
+
+
 
 
 
