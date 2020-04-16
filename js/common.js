@@ -98,7 +98,7 @@ jQuery(function ($) {
     triggerHook: 'onLeave'})
 
     .setClassToggle("#header", "on") // add class toggle
-    .addIndicators() // add indicators (requires plugin)
+   // .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
 
     new ScrollMagic.Scene({triggerElement: "#main",
@@ -106,7 +106,7 @@ jQuery(function ($) {
     triggerHook: 'onLeave'})
 
     .setClassToggle("#hamBtn", "on") // add class toggle
-    .addIndicators() // add indicators (requires plugin)
+   // .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
 
     new ScrollMagic.Scene({triggerElement: "#main",
@@ -114,7 +114,7 @@ jQuery(function ($) {
     triggerHook: 'onLeave'})
 
     .setClassToggle(".quick", "on") // add class toggle
-    .addIndicators() // add indicators (requires plugin)
+   // .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
 
 
