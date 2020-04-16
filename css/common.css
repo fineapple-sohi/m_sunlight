@@ -230,6 +230,6 @@ p {font-size: 0.8rem; font-weight: 300;}
 
 .quick a span {display: inline-block; background: no-repeat left center/25%;}
 .quick a.q-hwagok span,
-.quick a.q-magok span {background-image: url(../images/icon_loca.png); padding-left: 22%;}
+.quick a.q-magok span {background-image: url(../images/icon_call.png); padding-left: 22%;}
 .quick a.q-blog span {background-image: url(../images/icon_nblog.png); padding-left: 28%;}
-.quick a.q-call span {background-image: url(../images/icon_call.png); padding-left: 28%;}
+.quick a.q-call span {background: none;}
