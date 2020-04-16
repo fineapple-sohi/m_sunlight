@@ -125,7 +125,7 @@ p {font-size: 0.8rem; font-weight: 300;}
 #hamBtn span.mid {top: 50%; width: 70%;}
 #hamBtn span.btm {top: 100%; width: 85%;}
 
-#hamBtn.active span {background: #000;}
+#hamBtn.active span {height: 0.15em;}
 #hamBtn.active span.top {animation: ham-top 0.6s ease-out forwards;}
 #hamBtn.active span.mid {animation: ham-mid 0.6s ease-out forwards;}
 #hamBtn.active span.btm {animation: ham-btm 0.6s ease-out forwards;}
@@ -140,7 +140,7 @@ p {font-size: 0.8rem; font-weight: 300;}
 #header.on .logo a {height: 1.6rem;}
 #header.on .call {width: 1.4rem; height: 1.4rem;}
 #hamBtn.on {top: 0.9rem; width: 1.4rem; height: 0.9rem;}
-#header.on #gnb:before {height: 2.8rem;}
+#header.on #gnb .gnb-top {height: 2.8rem;}
 
 
 @keyframes ham-top {
@@ -181,10 +181,14 @@ p {font-size: 0.8rem; font-weight: 300;}
 
 
 
-#gnb {position: fixed; width: 80%; height: 100vh; top: 0; left: 0; padding: 6em 1.5em 3em; transform: translate(-100%,0); background: #fff; opacity: 0; z-index: 1010; transition: all 0.7s; overflow-y: auto;}
-#gnb:before {content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3.3rem; background: #ffdb63;}
+#gnb {position: fixed; width: 80%; height: 100vh; top: 0; left: 0; transform: translate(-100%,0); background: #fff; opacity: 0; z-index: 1010; transition: all 0.7s; overflow-y: auto;}
+/* #gnb:before {content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3.3rem; background: #ffdb63;} */
+#gnb .gnb-top {display: flex; align-items: center; justify-content: flex-end; height: 3.3rem; background: #ffdb63; padding-right: 1em;}
+#gnb .gnb-top a.go-home {display: block; width: 2rem; height: 50%; background: url(../images/icon_home.png) no-repeat right top/contain;}
+
 #gnb.on {transform: translate(0,0); opacity: 1;}
 
+#header #gnb .depth1 {padding: 3em 1.5em 3em; }
 #header #gnb .depth1 > li {position: relative; font-size: 1rem; font-family: 'NanumBarunG'; font-weight: 400;}
 #header #gnb .depth1 > li + li {margin-top: 1.4em;}
 #header #gnb .depth1 > li.on {font-weight: 700;}
