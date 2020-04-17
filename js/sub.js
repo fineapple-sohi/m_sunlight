@@ -66,12 +66,11 @@ $(document).ready(function(){
         $('#teachTab .tabcnt').css({height: teachtabHei});
     });
 
-
-    window.onresize = function(){
+    $(window).on('resize', function(){
         teachtabHei = $('#teachTab .tabcnt .tabpanel.active').outerHeight(true);
         $('#teachTab .tabcnt').css({height: teachtabHei});
-        document.location.reload();
-    }
+
+    });
 
 
 
