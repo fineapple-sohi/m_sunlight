@@ -6,8 +6,9 @@
 .cnt01 {padding-top: 3rem;}
 
 .tablist li {cursor: pointer;}
-.sub_tap .tabpanel {display: none;}
-.sub_tap .tabpanel.active {display: block;}
+.sub_tap {position: relative;}
+.sub_tap .tabpanel {position: absolute; left: 0; width: 100%; z-index: -1;}
+.sub_tap .tabpanel.active {z-index: 1;}
 
 
 /* sub1 */
@@ -33,11 +34,24 @@
 
 
 #teacher {background-image: linear-gradient(to bottom, #fff 0%, #f6f6f6 100%); padding: 3rem 0;}
+#teachTab .tablist {display: flex; flex-wrap: wrap; justify-content: center; border: 1px solid #eee; padding: 0.6em 0; background: rgba(255,255,255,0.95);}
+#teachTab .tablist.fixed {position: fixed; top: 0; left: 0;}
+
+#teachTab .tablist li {font-size: 0.8rem; color: #aaa; padding: 0.5em 0 ; margin: 0 0.5em;}
+#teachTab .tablist li.on {color: #181818;}
+
+#teachTab .tabpanel > ul:after, #teachTab .tabpanel > ul > li:after {content: ''; display: block; clear: both;}
+#teachTab .tabpanel > ul > li {text-align: left; display: flex; flex-direction: column; align-items: center;}
+#teachTab .tabpanel > ul > li + li {margin-top: 4rem;}
+
+#teachTab .tabpanel .profile {text-align: center;}
+#teachTab .tabpanel .profile img {width: 80%; max-width: 192px;}
+#teachTab .tabpanel .profile p {margin-top: 1em; font-weight: 400;}
+#teachTab .tabpanel .history {font-size: 0.8rem; font-weight: 300; margin-top: 1.5rem; line-height: 1.6;}
+#teachTab .tabpanel .history li + li {margin-top: 0.6em;}
 
 
-
-
-#facility {padding: 3rem 0 7rem;}
+#facility {padding: 3rem 0 30%;}
 #facility .area {overflow: visible;}
 
 #faciTab .interiorView.swiper-container {overflow: visible;}

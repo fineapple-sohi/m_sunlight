@@ -102,13 +102,15 @@ p {font-size: 0.8rem; font-weight: 300;}
 .mb8 {margin-bottom: 4rem;}
 .mb12 {margin-bottom: 6rem;}
 
-
+.pt2 {padding-top: 1rem;}
+.pt4 {padding-top: 2rem;}
+.pt8 {padding-top: 4rem;}
+.pt10 {padding-top: 5rem;}
 
 
 /* header */
 #header {position: fixed; top: 0; left: 0; width: 100%; padding: 0 5%; z-index: 1000; background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.3) 100%);
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);}
+    -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); transition: all 0.3s;}
 
 #header .dim {position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); opacity: 0; visibility: hidden; transition: all 0.5s;}
 #header.active .dim {opacity: 1; visibility: visible; z-index: 1005;}
@@ -141,6 +143,10 @@ p {font-size: 0.8rem; font-weight: 300;}
 #header.on .call {width: 1.4rem; height: 1.4rem;}
 #hamBtn.on {top: 0.9rem; width: 1.4rem; height: 0.9rem;}
 #header.on #gnb .gnb-top {height: 2.8rem;}
+
+#header.none {transform: translate(0,-100%);}
+#hamBtn.none {display: none;}
+
 
 
 @keyframes ham-top {
@@ -203,7 +209,7 @@ p {font-size: 0.8rem; font-weight: 300;}
 
 
 /* footer */
-#footer {color: #484848; background: #ffdb63; padding: 2rem 0 6rem;}
+#footer {color: #484848; background: #ffdb63; padding: 2rem 0 6rem; min-width: 375px;}
 
 #footer .f_top {padding-bottom: 1em; border-bottom: 1px solid rgba(56, 56, 56, 0.2);}
 #footer .f_top .info li {display: inline-block; margin: 1em 2em 0 0;}

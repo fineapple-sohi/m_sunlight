@@ -46,18 +46,75 @@ $(document).ready(function(){
 
     /* sub tab */
     var $tabList = $('.sub_tap .tablist .tab');
-    var $tabCnt = $('.sub_tap .tabcnt .tabpanel');
 
-    $tabList.eq(0).addClass('on').siblings().removeClass('on');
-    $tabCnt.eq(0).addClass('active').siblings().removeClass('active');
+    var teachtabHei = $('#teachTab .tabcnt .tabpanel.active').outerHeight(true);
+    var faciTabHei = $('#faciTab .tabcnt .tabpanel.active').outerHeight(true);
+
+    $('#teachTab .tabcnt').css({height: teachtabHei});
+    $('#faciTab .tabcnt').css({height: faciTabHei});
+
+
 
     $tabList.on('click', function(){
+        
         var tabbidx = $(this).index();
 
         $(this).addClass('on').siblings().removeClass('on');
-        $(this).parent('.tablist').next().children().eq(tabbidx).addClass('active').siblings().removeClass('active');
+        $(this).parent('.tablist').next().children('.tabpanel').eq(tabbidx).addClass('active').siblings().removeClass('active');
 
+        teachtabHei = $('#teachTab .tabcnt .tabpanel.active').outerHeight(true);
+        $('#teachTab .tabcnt').css({height: teachtabHei});
     });
+
+
+    window.onresize = function(){
+        teachtabHei = $('#teachTab .tabcnt .tabpanel.active').outerHeight(true);
+        $('#teachTab .tabcnt').css({height: teachtabHei});
+        document.location.reload();
+    }
+
+
+
+    /* teacher tablist */
+    // var controller = new ScrollMagic.Controller();
+    // var teachHei = $('#teachTab .tabpanel.active').outerHeight(true);
+
+    // if($('#teachTab').length) {
+
+    //     var scene = new ScrollMagic.Scene({
+    //         triggerElement: "#teachTabcnt", 
+    //         duration: 0,
+    //         triggerHook: 0.25
+    //     })
+    //     .setPin("#teachBtns")
+    //     .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+    //     .addTo(controller);
+    
+    
+    //     new ScrollMagic.Scene({
+    //         triggerElement: "#teachBtns",
+    //         triggerHook: 'onLeave',
+    //         duration: teachHei
+    //     })
+    
+    //     .setClassToggle("#header", "none") // add class toggle
+    //     //.addIndicators() // add indicators (requires plugin)
+    //     .addTo(controller);
+
+
+    //     new ScrollMagic.Scene({
+    //         triggerElement: "#teachBtns",
+    //         triggerHook: 'onLeave',
+    //         duration: teachHei
+    //     })
+    
+    //     .setClassToggle("#hamBtn", "none") // add class toggle
+    //     //.addIndicators() // add indicators (requires plugin)
+    //     .addTo(controller);
+    // }
+
+   
+
 
 
 
