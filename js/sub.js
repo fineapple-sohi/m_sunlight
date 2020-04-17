@@ -50,9 +50,6 @@ $(document).ready(function(){
     var teachtabHei = $('#teachTab .tabcnt .tabpanel.active').outerHeight(true);
     var faciTabHei = $('#faciTab .tabcnt .tabpanel.active').outerHeight(true);
 
-    $('#teachTab .tabcnt').css({height: teachtabHei});
-    $('#faciTab .tabcnt').css({height: faciTabHei});
-
 
 
     $tabList.on('click', function(){
@@ -67,10 +64,16 @@ $(document).ready(function(){
     });
 
     $(window).on('resize', function(){
+
         teachtabHei = $('#teachTab .tabcnt .tabpanel.active').outerHeight(true);
         $('#teachTab .tabcnt').css({height: teachtabHei});
 
+        faciTabHei = $('#faciTab .tabcnt .tabpanel.active').outerHeight(true);
+        $('#faciTab .tabcnt').css({height: faciTabHei});
+
     });
+
+    $(window).resize();
 
 
 
