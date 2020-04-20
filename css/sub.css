@@ -41,7 +41,7 @@
 #teachTab .tablist li.on {color: #181818;}
 
 #teachTab .tabpanel > ul:after, #teachTab .tabpanel > ul > li:after {content: ''; display: block; clear: both;}
-#teachTab .tabpanel > ul > li {text-align: left; display: flex; flex-direction: column; align-items: center;}
+#teachTab .tabpanel > ul > li {text-align: left;}
 #teachTab .tabpanel > ul > li + li {margin-top: 4rem;}
 
 #teachTab .tabpanel .profile {text-align: center;}
